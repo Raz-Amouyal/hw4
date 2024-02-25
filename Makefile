@@ -12,4 +12,4 @@ grades.o: grades.c grades.h
 	$(CC) $(CFLAGS) grades.c
 
 clean:
-	$(RM)
+	$(RM) 
