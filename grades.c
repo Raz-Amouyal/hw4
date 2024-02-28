@@ -169,14 +169,17 @@ int grades_add_student(struct grades *grades, const char *name, int id){
     student.courses= list_init(course_clone, course_destroy);
 
     if(!student.courses){
+        free(student.name);
         return FAIL;
     }
 
     /* Insert the student and check if succeeded - func return 0 on success */
     if(list_push_back(grades->students, &student)){
+        free(student.name);
         list_destroy(student.courses);
         return FAIL;
     }
+    free(student.name);
     return SUCCESS;
 }
 
@@ -207,7 +210,7 @@ int grades_add_grade(struct grades *grades,
 
     /* Insert the course and check if succeeded - func return 0 on success */
     int res = list_push_back(student->courses, &course);
-    //free(course.name);
+    free(course.name);
     return res;
 }
 
