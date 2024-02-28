@@ -6,7 +6,7 @@ EXEC=libgrades.so
 RM=rm -f *.o *grades.so 
 
 $(EXEC): $(OBJS)
-	$(CCLINK) -shared $(OBJS) -o libgrades.so -llinked-list -L.
+	$(CCLINK) -shared $(OBJS) -o $(EXEC) -llinked-list -L.
 
 $(OBJS): grades.c grades.h
 	$(CC) $(CFLAGS) grades.c
