@@ -1,5 +1,12 @@
 #include "grades.h"
 
+#include <stdbool.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "linked-list.h"
+
 
 #define FAIL 1
 #define SUCCESS 0
